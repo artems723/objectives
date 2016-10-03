@@ -2,3 +2,5 @@
 
 Objectives
 ==========
+
+Spring / JPA(Hibernate) webb application
