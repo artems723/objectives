@@ -3,4 +3,4 @@
 Objectives
 ==========
 
-Spring / JPA(Hibernate) webb application
+Maver / Spring / JPA(Hibernate) RESTful web application
