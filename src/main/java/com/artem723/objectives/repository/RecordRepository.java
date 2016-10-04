@@ -2,6 +2,7 @@ package com.artem723.objectives.repository;
 
 import com.artem723.objectives.model.Record;
 
+import java.time.LocalDate;
 import java.util.Collection;
 
 public interface RecordRepository {
@@ -16,4 +17,7 @@ public interface RecordRepository {
 
     // ORDERED date
     Collection<Record> getAll(int objectiveId, int userId);
+
+    // ORDERED date
+    Collection<Record> getBetween(LocalDate startDate, LocalDate endDate, int objectiveId, int userId);
 }

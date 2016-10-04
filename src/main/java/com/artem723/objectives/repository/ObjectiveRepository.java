@@ -17,7 +17,4 @@ public interface ObjectiveRepository {
 
     // ORDERED name
     Collection<Objective> getAll(int userId);
-
-//    // ORDERED dateTime
-//    Collection<Objective> getBetween(LocalDateTime startDate, LocalDateTime endDate, int userId);
 }
