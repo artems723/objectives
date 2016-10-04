@@ -49,6 +49,14 @@ public class Record extends BaseEntity{
         this.done = done;
     }
 
+    public Objective getObjective() {
+        return objective;
+    }
+
+    public void setObjective(Objective objective) {
+        this.objective = objective;
+    }
+
     @Override
     public String toString() {
         return "Record{" +
