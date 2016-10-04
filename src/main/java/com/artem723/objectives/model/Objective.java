@@ -6,11 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "objectives")
-public class Objective extends BaseEntity {
-
-    @NotEmpty
-    @Column(name = "name", nullable = false, unique = true)
-    protected String name;
+public class Objective extends NamedEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
@@ -19,20 +15,11 @@ public class Objective extends BaseEntity {
     public Objective(){}
 
     public Objective(Integer id, String name) {
-        super(id);
-        this.name = name;
+        super(id, name);
     }
 
     public Objective(Objective o) {
         this(o.getId(), o.getName());
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
