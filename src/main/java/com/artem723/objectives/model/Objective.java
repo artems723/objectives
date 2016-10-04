@@ -1,7 +1,5 @@
 package com.artem723.objectives.model;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
 
 @Entity

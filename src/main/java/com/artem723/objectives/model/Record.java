@@ -10,12 +10,12 @@ import java.time.LocalDate;
 public class Record extends BaseEntity{
 
     @NotEmpty
-    @Column(name = "date", nullable = false, unique = true)
+    @Column(name = "date", nullable = false)
     private LocalDate date;
 
     @NotEmpty
     @Column(name = "done", nullable = false)
-    private Boolean done;
+    private boolean done;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "objective_id", nullable = false)
@@ -23,7 +23,7 @@ public class Record extends BaseEntity{
 
     public Record(){}
 
-    public Record(Integer id, LocalDate date, Boolean done) {
+    public Record(Integer id, LocalDate date, boolean done) {
         super(id);
         this.date = date;
         this.done = done;
@@ -41,20 +41,21 @@ public class Record extends BaseEntity{
         this.date = date;
     }
 
-    public Boolean isDone() {
+    public boolean isDone() {
         return done;
     }
 
-    public void setDone(Boolean done) {
+    public void setDone(boolean done) {
         this.done = done;
     }
 
     @Override
     public String toString() {
         return "Record{" +
+                "id=" + id +
                 "date=" + date +
                 ", done=" + done +
                 ", objective=" + objective +
-                "} " + super.toString();
+                "} ";
     }
 }
