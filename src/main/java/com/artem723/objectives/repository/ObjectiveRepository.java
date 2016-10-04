@@ -2,7 +2,6 @@ package com.artem723.objectives.repository;
 
 import com.artem723.objectives.model.Objective;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 
 public interface ObjectiveRepository {
