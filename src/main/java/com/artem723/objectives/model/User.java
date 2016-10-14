@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.EnumSet;
+import java.util.List;
 import java.util.Set;
 
 @NamedQueries({
@@ -43,6 +44,9 @@ public class User extends NamedEntity {
     @Column(name = "role")
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<Role> roles;
+
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Objective> objectives;
 
     public User() {
     }
@@ -97,6 +101,10 @@ public class User extends NamedEntity {
 
     public String getPassword() {
         return password;
+    }
+
+    public List<Objective> getObjectives() {
+        return objectives;
     }
 
     @Override
